@@ -14,4 +14,5 @@ jobs:
       run: |
         $date = Get-Date -Format "yyyyMMdd"
         $build_number = $env:GITHUB_RUN_NUMBER
-        Write-Output $build_number
+        $formatted_output = "$date.$build_number"
+        Write-Output $formatted_output
