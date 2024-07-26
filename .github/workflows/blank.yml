@@ -1,0 +1,17 @@
+name: Build Web App
+ 
+on: workflow_dispatch
+ 
+jobs:
+  build:
+ 
+    runs-on: windows-2019
+ 
+    steps:
+
+    - name: Get current date
+      id: date
+      run: |
+        $date = Get-Date -Format "yyyyMMdd"
+        $build_number = ${{github.run_number}}
+        Write-Output $date.$build_number
